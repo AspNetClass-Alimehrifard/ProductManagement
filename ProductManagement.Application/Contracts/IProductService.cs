@@ -1,7 +1,7 @@
 ﻿using ProductManagement.Application.DTOs.Requests;
 using ProductManagement.Application.DTOs.Responses;
 
-namespace ProductManagement.Application.Contracts.Services
+namespace ProductManagement.Application.Contracts
 {
     public interface IProductService
     {

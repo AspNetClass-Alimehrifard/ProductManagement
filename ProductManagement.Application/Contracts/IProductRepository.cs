@@ -1,6 +1,6 @@
-﻿using ProductManagement.Domain.Entities;
+﻿using ProductManagement.Application.Entities;
 
-namespace ProductManagement.Application.Contracts.Repositories
+namespace ProductManagement.Application.Contracts
 {
     public interface IProductRepository
     {

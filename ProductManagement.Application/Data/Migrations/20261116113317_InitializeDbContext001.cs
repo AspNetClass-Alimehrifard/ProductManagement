@@ -2,7 +2,7 @@
 
 #nullable disable
 
-namespace ProductManagement.Infrastructure.Migrations
+namespace ProductManagement.Application.Migrations
 {
     /// <inheritdoc />
     public partial class InitializeDbContext001 : Migration

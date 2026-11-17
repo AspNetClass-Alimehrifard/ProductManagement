@@ -4,11 +4,11 @@ using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
-using ProductManagement.Infrastructure.Data;
+using ProductManagement.Application.Data;
 
 #nullable disable
 
-namespace ProductManagement.Infrastructure.Migrations
+namespace ProductManagement.Application.Migrations
 {
     [DbContext(typeof(ProjectDbContext))]
     [Migration("20261116113317_InitializeDbContext001")]

@@ -1,5 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using ProductManagement.Application.Contracts.Repositories;
+using ProductManagement.Application.Contracts;
 using ProductManagement.Domain.Entities;
 using ProductManagement.Infrastructure.Data;
 
@@ -16,23 +16,30 @@ namespace ProductManagement.Infrastructure.Repositories
         }
         #endregion
 
+        #region [-GetAll-]
         public async Task<IEnumerable<Product>> GetAllAsync()
         {
             return await _context.Products.AsNoTracking().ToListAsync();
         }
+        #endregion
 
+        #region [-Get-]
         public async Task<Product?> GetByIdAsync(int id)
         {
             return await _context.Products.AsNoTracking().FirstOrDefaultAsync(p => p.Id == id);
         }
+        #endregion
 
+        #region [-Create-]
         public async Task<Product> CreateAsync(Product product)
         {
             await _context.Products.AddAsync(product);
             await _context.SaveChangesAsync();
             return product;
         }
+        #endregion
 
+        #region [-Update-]
         public async Task<Product?> UpdateAsync(Product product)
         {
             var existingProduct = await _context.Products.FirstOrDefaultAsync(p => p.Id == product.Id);
@@ -49,7 +56,9 @@ namespace ProductManagement.Infrastructure.Repositories
 
             return existingProduct;
         }
+        #endregion
 
+        #region [-Delete-]
         public async Task<bool> DeleteAsync(int id)
         {
             var product = await _context.Products.FirstOrDefaultAsync(p => p.Id == id);
@@ -63,5 +72,6 @@ namespace ProductManagement.Infrastructure.Repositories
             await _context.SaveChangesAsync();
             return true;
         }
+        #endregion
     }
 }
